@@ -1,4 +1,4 @@
-fetch("http://127.0.0.1:5500/datatable4.json")
+fetch("http://127.0.0.1:5501/datatable4.json")
   .then(function (response) {
     return response.json();
   })
@@ -33,7 +33,7 @@ fetch("http://127.0.0.1:5500/datatable4.json")
 
 
 
-  fetch("http://127.0.0.1:5500/datatable4.json")
+  fetch("http://127.0.0.1:5501/datatable4.json")
   .then(function (response) {
     return response.json();
   })
@@ -73,7 +73,7 @@ fetch("http://127.0.0.1:5500/datatable4.json")
 
 
 
-fetch("http://127.0.0.1:5500/datatable4.json")
+fetch("http://127.0.0.1:5501/datatable4.json")
   .then(function (response) {
     return response.json();
   })
