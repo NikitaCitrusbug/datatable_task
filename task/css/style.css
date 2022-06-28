@@ -1,0 +1,41 @@
+.container-fluid{
+    margin-top: 20px;
+    position: relative;
+    
+}
+#label{
+    color: crimson;
+    
+}
+#sea{
+    font-size: 20px;
+    margin-bottom: 10px;
+    /* display: grid; */
+}
+/* .label.sticky h1{
+    position: sticky;
+    top: 0;
+} */
+/* #search{
+    padding: 0px 25px;
+} */
+.table{
+    border-collapse: collapse;
+    margin: 0px 0px;
+    min-width: 400px;
+    font-size: large;
+    
+
+}
+.table thead tr{
+    background-color: #b4e3f2;
+    color: royalblue;
+
+    
+}
+
+.table.sticky th{
+    position: sticky;
+    top: 0;
+    background-color: #b4e3f2;
+}
