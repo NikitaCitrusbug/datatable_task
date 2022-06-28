@@ -12,6 +12,11 @@
     margin-bottom: 10px;
     /* display: grid; */
 }
+#select{
+    font-size: 20px;
+    margin-bottom: 10px;
+    /* display: grid; */
+}
 /* .label.sticky h1{
     position: sticky;
     top: 0;

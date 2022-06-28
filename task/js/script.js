@@ -180,6 +180,32 @@ fetch("http://127.0.0.1:5500/datatable4.json")
   });
   
 
+// var searchBox = document.getElementById("search");
+// searchBox.addEventListener('keyup' ,function(){
+//     var searchData = this.value;
+//     searchData = searchData.toUpperCase();
+//     // console.log(searchData);
+//     var tableSearch = document.getElementById('tablesearch');
+//     var all = tableSearch.getElementsByTagName('tr');
+//     // console.log(all);
+//     for(var i=0;i < all.length; i++){
+//         var address_column = all[i].getElementsByTagName('td')[6];
+//         if(address_column){
+//             var address_value = address_column.innerHTML || address_column.textContent; 
+//             address_value = address_value.toUpperCase();
+//             if(address_value.indexOf(searchData) > -1){
+//                 all[i].style.display = '';
+//                 // console.log("found")
+//             }else{
+//                 all[i].style.display = 'none';
+//                 // console.log("not found")
+//             }
+
+//         }
+//     }
+// })
+
+
 var searchBox = document.getElementById("search");
 searchBox.addEventListener('keyup' ,function(){
     var searchData = this.value;
@@ -189,18 +215,24 @@ searchBox.addEventListener('keyup' ,function(){
     var all = tableSearch.getElementsByTagName('tr');
     // console.log(all);
     for(var i=0;i < all.length; i++){
-        var address_column = all[i].getElementsByTagName('td')[6];
-        if(address_column){
-            var address_value = address_column.innerHTML || address_column.textContent; 
-            address_value = address_value.toUpperCase();
-            if(address_value.indexOf(searchData) > -1){
-                all[i].style.display = '';
-                // console.log("found")
-            }else{
-                all[i].style.display = 'none';
-                // console.log("not found")
+        var address_column = all[i].getElementsByTagName('td');
+        for(var j = 0 ; j<address_column.length; j++){
+            if(address_column[j]){
+                var address_value = address_column[j].innerHTML || address_column[j].textContent; 
+                address_value = address_value.toUpperCase();
+                if(address_value.indexOf(searchData) > -1){
+                    all[i].style.display = '';
+                    // console.log("found")
+                    break;
+                }else{
+                    all[i].style.display = 'none';
+                    // console.log("not found")
+                }
+    
             }
 
+
         }
+        
     }
 })
