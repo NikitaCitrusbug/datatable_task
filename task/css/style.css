@@ -7,12 +7,13 @@
     color: crimson;
     
 }
+
 #sea{
     font-size: 20px;
     margin-bottom: 10px;
     /* display: grid; */
 }
-#select{
+.select{
     font-size: 20px;
     margin-bottom: 10px;
     /* display: grid; */
@@ -35,6 +36,7 @@
 .table thead tr{
     background-color: #b4e3f2;
     color: royalblue;
+    
 
     
 }
@@ -43,4 +45,7 @@
     position: sticky;
     top: 0;
     background-color: #b4e3f2;
+}
+.pagination li:hover{
+    cursor: pointer;
 }

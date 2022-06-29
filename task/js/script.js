@@ -89,7 +89,7 @@ fetch("http://127.0.0.1:5501/datatable4.json")
         var text = $(this).html()
         // console.log(text)
         var text = text.substring(0 , text.length - 1)
-        // console.log(txt);
+        // console.log(text);
         if(order == "desc"){
             datatable = datatable.sort((a,b) => a[column] > b[column] ? 1: -1)
             $(this).data('order' , 'asc')
@@ -236,3 +236,198 @@ searchBox.addEventListener('keyup' ,function(){
         
     }
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var table = document.getElementById('tablesearch');
+// // var table = '#tablesearch'
+// $('select').on('change', function(){
+//   $('.pagination').html('')
+//   var t = 0
+//   var pageRows = parseInt($(this).value())
+  
+//   var pageTotalRows = $(table+ 'tbody tr').length
+//   $(table +'tr:gt(0)').each(function(){
+//     t++
+//     if(t > pageRows){
+      
+//       $(this).hide()
+//     }
+//     if(t <= pageRows){
+      
+//       $(this).show()
+//     }
+//     if(pageTotalRows > pageRows){
+//       var pageNum = Math.ceil(pageTotalRows/pageRows)
+//       for(var i =1 ; i <= pageNum;){
+//         $('.pagination').append('<li data-page="'+i+'">\ <span> '+ i++ +'<span class="sr-only">(current)</span></span>\</li>').show()
+//       }
+//     }
+//     $('.pagination li:first-child').addClass('active')
+//     $('.pagination li').on('click', function(){
+//       var pNum = $(this).attr('data-page')
+//       var index = 0
+//       $('.pagination li').removeClass('active')
+//       $(this).addClass('active')
+//       $(table +'tr:gt(0)').each(function(){
+//         index++
+//         if(index >(pageRows * pNum) || index <= ((pageRows*pNum)- pageRows)){
+//           $(this).hide()
+//         }
+//         else{
+//           $(this).show()
+//         }
+
+//       })
+//     })
+//   })
+//   $(function(){
+//     $('table tr:eq(0)').prepend('<th>ID<th>')
+//     var id = 0;
+//     $('table tr:gt(0)').each(function(){
+//       id++
+//       $(this).prepend('<td>'+ id +'</td>')
+//     })
+//   })
+
+// })
+
+// pageRows = 15
+// pageTotalRows = 45
+// pageNum = Math.ceil(pageTotalRows/pageRows)
+// console.log(pageNum);
+
+
+
+
+
+
+// getPagination('#tablesearch');
+
+// function getPagination(tablesearch) {
+// var lastPage = 1;
+
+// $('#maxRows')
+// .on('change', function(evt) {
+// lastPage = 1;
+// $('.pagination').find('li').slice(1, -1).remove();
+// var trnum = 0; 
+// var maxRows = parseInt($(this).val()); 
+// // console.log(maxRows)
+// if (maxRows == 150) {
+// $('.pagination').hide();
+// } else {
+// $('.pagination').show();
+// }
+
+// var totalRows = $(tablesearch + ' tbody tr').length; 
+// // console.log(totalRows);
+// $(tablesearch + ' tr:gt(0)').each(function() {
+//   trnum++;
+//   if (trnum > maxRows) {
+//     $(this).hide(); 
+//   }
+//   if (trnum <= maxRows) {
+//     $(this).show();
+//   } 
+// }); 
+// if (totalRows > maxRows) {
+// var pagenum = Math.ceil(totalRows / maxRows); 
+
+// for (var i = 0; i <= pagenum; ) {
+//   $('.pagination #prev').before('<li data-page="'+ i +'">\<span>' + i++ + '<span class="sr-only">(current)</span></span>\</li>'
+//   ).show();
+// } 
+// } 
+
+// $('.pagination [data-page="1"]').addClass('active'); 
+// $('.pagination li').on('click', function(evt) {
+// // evt.stopImmediatePropagation();
+// // evt.preventDefault();
+// var pageNum = $(this).attr('data-page'); // get it's number
+
+// var maxRows = parseInt($('#maxRows').val()); // get Max Rows from select option
+
+// if (pageNum == 'prev') {
+// if (lastPage == 1) {
+//   return;
+// }
+// pageNum = --lastPage;
+// }
+// if (pageNum == 'next') {
+// if (lastPage == $('.pagination li').length - 2) {
+//   return;
+// }
+// pageNum = ++lastPage;
+// }
+
+// lastPage = pageNum;
+// var trIndex = 0; 
+// $('.pagination li').removeClass('active'); 
+// $('.pagination [data-page="' + lastPage + '"]').addClass('active'); 
+// limitPagging();
+// $(tablesearch + ' tr:gt(0)').each(function() {
+//   trIndex++; 
+//   if (trIndex > maxRows * pageNum || trIndex <= maxRows * pageNum - maxRows){
+//     $(this).hide();
+//   } else {
+//     $(this).show();
+//   } 
+// }); 
+// }); 
+// limitPagging();
+// }).val(5).change();
+// }
+
+// function limitPagging(){
+// // alert($('.pagination li').length)
+
+// if($('.pagination li').length > 7 ){
+// if( $('.pagination li.active').attr('data-page') <= 3 ){
+// $('.pagination li:gt(5)').hide();
+// $('.pagination li:lt(5)').show();
+// $('.pagination [data-page="next"]').show();
+// }if ($('.pagination li.active').attr('data-page') > 3){
+// $('.pagination li:gt(0)').hide();
+// $('.pagination [data-page="next"]').show();
+// for( let i = ( parseInt($('.pagination li.active').attr('data-page'))  -2 )  ; i <= ( parseInt($('.pagination li.active').attr('data-page'))  + 2 ) ; i++ ){
+// $('.pagination [data-page="'+i+'"]').show();
+
+// }
+
+// }
+// }
+// }
+
+// $(function() {
+// $('tablesearch tr:eq(0)').prepend('<th> Avg. Area Income </th>');
+
+// var id = 0;
+
+// $('tablesearch tr:gt(0)').each(function() {
+// id++;
+// $(this).prepend('<td>' + id + '</td>');
+// });
+// });
+
+
+
