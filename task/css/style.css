@@ -45,7 +45,23 @@
     position: sticky;
     top: 0;
     background-color: #b4e3f2;
+    
 }
 .pagination li:hover{
     cursor: pointer;
+}
+/* #id1 , #id2{
+    display: inline;
+} */
+.con{
+    display: grid;
+    grid-template-columns:3fr 0fr;
+}
+#room ,#bedroom{
+    margin-top: 15px;
+    margin-right: 10px;
+}
+#age , #income , #population , #address , #price{
+    margin-bottom: 11px;
+    
 }

@@ -85,18 +85,27 @@ fetch("http://127.0.0.1:5501/datatable4.json")
   
     $('th').on('click' ,function(){
         var column = $(this).data('column')
+        // console.log(column);
         var order = $(this).data('order')
-        var text = $(this).html()
+        // console.log(order)
+        // var text = $(this).html()
+        // var a = $('.avg').html();
+        // console.log(a);
+        var text = $(this).html();
         // console.log(text)
         var text = text.substring(0 , text.length - 1)
         // console.log(text);
         if(order == "desc"){
-            datatable = datatable.sort((a,b) => a[column] > b[column] ? 1: -1)
-            $(this).data('order' , 'asc')
             
+            $(this).data('order' , 'asc')
+            datatable = datatable.sort((a,b) => a[column] > b[column] ? 1: -1)
+            // var ab = document.getElementById('avg').innerHTML;
+            // console.log(ab);
             text += '&#9660'
+            
             let out = "";
             for (let pr of datatable) {
+              
                 out += `
                   
                  <tr class="active">
@@ -116,12 +125,14 @@ fetch("http://127.0.0.1:5501/datatable4.json")
               `;
               // alert(pr["Avg. Area Income"]);  
               }
-            console.log(datatable);
+            // console.log(datatable);
             pr.innerHTML = out;
         }
         else{
             $(this).data('order' , 'desc')
             datatable = datatable.sort((a,b) => a[column] < b[column] ? 1: -1)
+            // var abc = document.getElementById('avg').innerHTML;
+            // console.log(abc);
             text += '&#9650'
             let out = "";
             for (let pr of datatable) {
@@ -144,7 +155,7 @@ fetch("http://127.0.0.1:5501/datatable4.json")
               `;
               // alert(pr["Avg. Area Income"]);  
               }
-            console.log(datatable);
+            // console.log(datatable);
             pr.innerHTML = out;
         }
         
@@ -321,113 +332,84 @@ searchBox.addEventListener('keyup' ,function(){
 
 
 
-// getPagination('#tablesearch');
+getPagination('#tablesearch');
 
-// function getPagination(tablesearch) {
-// var lastPage = 1;
+function getPagination(tablesearch) {
+var lastPage = 1;
 
-// $('#maxRows')
-// .on('change', function(evt) {
-// lastPage = 1;
-// $('.pagination').find('li').slice(1, -1).remove();
-// var trnum = 0; 
-// var maxRows = parseInt($(this).val()); 
-// // console.log(maxRows)
-// if (maxRows == 150) {
-// $('.pagination').hide();
-// } else {
-// $('.pagination').show();
-// }
+$('#maxRows')
+.on('change', function() {
+lastPage = 1;
+$('.pagination').find('li').slice(1, -1).remove();
+var trnum = 0; 
+var maxRows = parseInt($(this).val()); 
+// console.log(maxRows)
+if (maxRows == 150) {
+$('.pagination').hide();
+} else {
+$('.pagination').show();
+}
 
-// var totalRows = $(tablesearch + ' tbody tr').length; 
-// // console.log(totalRows);
-// $(tablesearch + ' tr:gt(0)').each(function() {
-//   trnum++;
-//   if (trnum > maxRows) {
-//     $(this).hide(); 
-//   }
-//   if (trnum <= maxRows) {
-//     $(this).show();
-//   } 
-// }); 
-// if (totalRows > maxRows) {
-// var pagenum = Math.ceil(totalRows / maxRows); 
+var totalRows = $(tablesearch + ' tbody tr').length; 
+// console.log(totalRows);
+$(tablesearch + ' tr:gt(0)').each(function() {
+  trnum++;
+  if (trnum > maxRows) {
+    $(this).hide(); 
+  }
+  if (trnum <= maxRows) {
+    $(this).show();
+  } 
+}); 
+if (totalRows > maxRows) {
+var pagenum = Math.ceil(totalRows / maxRows); 
 
-// for (var i = 0; i <= pagenum; ) {
-//   $('.pagination #prev').before('<li data-page="'+ i +'">\<span>' + i++ + '<span class="sr-only">(current)</span></span>\</li>'
-//   ).show();
-// } 
-// } 
+for (var i = 1; i <= pagenum; ) {
+  $('.pagination #prev').before('<li data-page="'+ i +'">\<span>' + i++ + '<span class="sr-only">(current)</span></span>\</li>'
+  ).show();
+} 
+} 
 
-// $('.pagination [data-page="1"]').addClass('active'); 
-// $('.pagination li').on('click', function(evt) {
-// // evt.stopImmediatePropagation();
-// // evt.preventDefault();
-// var pageNum = $(this).attr('data-page'); // get it's number
+$('.pagination [data-page="1"]').addClass('active'); 
+$('.pagination li').on('click', function() {
+// evt.stopImmediatePropagation();
+// evt.preventDefault();
+var pageNum = $(this).attr('data-page'); 
 
-// var maxRows = parseInt($('#maxRows').val()); // get Max Rows from select option
+var maxRows = parseInt($('#maxRows').val());
 
-// if (pageNum == 'prev') {
-// if (lastPage == 1) {
-//   return;
-// }
-// pageNum = --lastPage;
-// }
-// if (pageNum == 'next') {
-// if (lastPage == $('.pagination li').length - 2) {
-//   return;
-// }
-// pageNum = ++lastPage;
-// }
+if (pageNum == 'prev') {
+if (lastPage == 1) {
+  return;
+}
+pageNum = --lastPage;
+}
+if (pageNum == 'next') {
+if (lastPage == $('.pagination li').length - 2) {
+  return;
+}
+pageNum = ++lastPage;
+}
 
-// lastPage = pageNum;
-// var trIndex = 0; 
-// $('.pagination li').removeClass('active'); 
-// $('.pagination [data-page="' + lastPage + '"]').addClass('active'); 
+lastPage = pageNum;
+var trIndex = 0; 
+$('.pagination li').removeClass('active'); 
+$('.pagination [data-page="' + lastPage + '"]').addClass('active'); 
 // limitPagging();
-// $(tablesearch + ' tr:gt(0)').each(function() {
-//   trIndex++; 
-//   if (trIndex > maxRows * pageNum || trIndex <= maxRows * pageNum - maxRows){
-//     $(this).hide();
-//   } else {
-//     $(this).show();
-//   } 
-// }); 
-// }); 
+$(tablesearch + ' tr:gt(0)').each(function() {
+  trIndex++; 
+  if (trIndex > maxRows * pageNum || trIndex <= maxRows * pageNum - maxRows){
+    $(this).hide();
+  } else {
+    $(this).show();
+  } 
+}); 
+}); 
 // limitPagging();
-// }).val(5).change();
-// }
+})
+}
 
-// function limitPagging(){
-// // alert($('.pagination li').length)
 
-// if($('.pagination li').length > 7 ){
-// if( $('.pagination li.active').attr('data-page') <= 3 ){
-// $('.pagination li:gt(5)').hide();
-// $('.pagination li:lt(5)').show();
-// $('.pagination [data-page="next"]').show();
-// }if ($('.pagination li.active').attr('data-page') > 3){
-// $('.pagination li:gt(0)').hide();
-// $('.pagination [data-page="next"]').show();
-// for( let i = ( parseInt($('.pagination li.active').attr('data-page'))  -2 )  ; i <= ( parseInt($('.pagination li.active').attr('data-page'))  + 2 ) ; i++ ){
-// $('.pagination [data-page="'+i+'"]').show();
-
-// }
-
-// }
-// }
-// }
-
-// $(function() {
-// $('tablesearch tr:eq(0)').prepend('<th> Avg. Area Income </th>');
-
-// var id = 0;
-
-// $('tablesearch tr:gt(0)').each(function() {
-// id++;
-// $(this).prepend('<td>' + id + '</td>');
-// });
-// });
 
 
 
