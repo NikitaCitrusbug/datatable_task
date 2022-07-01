@@ -1,5 +1,6 @@
 .bg-color{
     background-color: #88bdf2;
+    color: #5cb85c;
     font-family: Arial, Helvetica, sans-serif;
 }
 .mb-3{
@@ -8,5 +9,19 @@
 .mt-3{
     font-size: 20px;
 }
-
+.container#blur.active{
+    /* visibility: hidden; */
+    filter: blur(25px);
+    
+}
+#hidden{
+    visibility: hidden;
+}
+#hidden.active{
+    visibility: visible;
+    position: absolute;
+    top: 0;
+    margin-left: 206px;
+    
+}
 
