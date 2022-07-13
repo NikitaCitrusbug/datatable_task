@@ -22,8 +22,8 @@ hiddenUpload.onchange = () => {
     var options = {
         dragMode: 'move',
         preview: '.img-preview',
-        viewMode: 2,
-        modal: false,
+        viewMode: 4,
+        // modal: false,
         background: false,
         ready: function(){
             
