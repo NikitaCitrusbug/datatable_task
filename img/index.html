@@ -1,35 +1,52 @@
 <html>
-<script src="https://jsuites.net/v4/jsuites.js"></script>
-<script src="https://jsuites.net/v4/jsuites.layout.js"></script>
-<link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
-<link rel="stylesheet" href="https://jsuites.net/v4/jsuites.layout.css" type="text/css" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
- 
-<div class='container'>
-    <div class='image-container'>
-        <div id='image-cropper' style='border:1px solid #cccccc'>
-            <span>Choose your image</span>
-        </div>
-    </div>
-    <input type='button' value='Get cropped image' id='img' class="btn-success">
-    <div class='image-crop'>
-        <div id='image-cropper-result'><img style='width:120px;height:120px;'></div>
-    </div>
-</div>
- 
-
+    <head>
+        <script src="https://jsuites.net/v4/jsuites.js"></script>
+        <script src="https://jsuites.net/v4/jsuites.layout.js"></script>
+        <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
+        <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.layout.css" type="text/css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/script.js"></script>
+    </head>
+    <body>
+        <div class='container'>
+            <div class='image-container'>
+                <div id='image-cropper' style='border:1px solid #f2c4c4'>
+                    <!-- <span>Click Here</span> -->
+                </div>
+            </div>
+            <input type="button" value="crop" id = "crop_img">
+            <input type='button' value='Get cropped image' id='img' class="btn-success">
+            <div class='image-crop'>
+                <div id='image-cropper-result'>
+                    <img style='width:150px;height:200px;'>
+                </div>
+            </div>
+        </div>        
+    </body>
  
 <script>
 var image_workspaceSpan = document.querySelector('.image-container span')
 
-jSuites.crop(document.getElementById('image-cropper'), {
+// jSuites.sorting(document.getElementById('image-cropper'), {
+//     ondragstart: function() {
+//         console.log(arguments);
+//     }
+// });
+
+document.getElementById('crop_img').onclick = function (){
+    jSuites.crop(document.getElementById('image-cropper'), {
     area: [ 280, 280 ],
     crop: [ 100, 100 ],
     
 })    
+}
+
+
+
  
 document.getElementById('img').onclick = function() {
-    
+    // image_workspaceSpan.style.display = "none"
     var img_crop = document.getElementById('image-cropper-result').children[0].src;
     console.log(img_crop)
     var crop_result = document.getElementById('image-cropper').crop.getCroppedImage().src;  
