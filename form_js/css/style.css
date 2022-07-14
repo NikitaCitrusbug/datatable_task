@@ -1,0 +1,29 @@
+body{
+    background-color: rgb(165, 216, 242);
+    /* background-image: url(image.jpg); */
+}
+/* .container{
+    background-color: rgb(241, 166, 223);
+    margin-top: 200px;
+    align-items: center;
+} */
+#ui{
+    border: 2px solid rgb(159, 156, 156);
+    border-radius: 0.5em;
+    background-color: rgb(167, 167, 167);
+    padding: 26px;
+    margin-top: 100px;
+    /* margin-bottom: 20px; */
+}
+.multi-selector .task,
+.multi-selector .taskone,
+.multi-selector .task2,
+.multi-selector .task3{
+    display: none;
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}

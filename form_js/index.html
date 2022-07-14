@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="#">
+    <title>Form_JS</title>
+</head>
+
+<body>  
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <div id="ui">
+                    <h1 class="text-center">Registration Form</h1>
+                    <form action="#" name="validation_form" class="form-group">
+                        <label>Name : </label>
+                        <input type="text" name="text" id="text" placeholder="Enter your name...." class="form-control" style="color: red;"><br>
+                        <label for="">Choose your fav language :</label><br>
+                        <input type="radio" id="html" name="fav_language" value="HTML">
+                        <label for="html">HTML</label><br>
+                        <input type="radio" id="css" name="fav_language" value="CSS">
+                        <label for="css">CSS</label><br>
+                        <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                        <label for="javascript">JavaScript</label>
+                        <br>
+
+                        <label for="">Please choose your gender :</label>
+                        <select name="" id="" class="form-control">
+                            <!-- <option value="">Choose Gender...</option> -->
+                            <option value="">Male</option>
+                            <option value="">Female</option>
+                            <option value="">Others</option>
+                        </select><br>
+                            <label for="">Select your Skill :</label><br> 
+                            <input type="checkbox" name="Leadership" id="checkbox_1">
+                            <label for="">Leadership</label><br>
+                            <input type="checkbox" name="Self-Motivated" id="checkbox_2">
+                            <label for="">Self-Motivated</label><br>
+                            <div class="multi-selector">
+                                <div class="select-field">
+                                    <input type="button" value="+" class="input-selector">
+                                    <!-- <input type="button" value="+" id="btn" class="btn"> -->
+                                </div>
+                                <input type="checkbox" name="Quick Learner" id="checkbox_3" class="task">
+                                <label for="" class="taskone">Quick Learner</label>
+                                <input type="checkbox" name="Planning and Organaization" id="checkbox_4" class="task2">
+                                <label for="" class="task3">Planning and Organaization</label>
+                            </div>
+                            
+                            
+                        <br>     
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="">Password:</label>
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Enter Password....">
+                                <!-- <input type="password" name="username" class="form-control" placeholder="First Name"> -->
+                                <!-- <input type="password" name="username" class="form-control" placeholder="First Name"> -->
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="">Confirm Password:</label>
+                                <input type="password" name="conpassword" class="form-control" placeholder="Re-Type password....">
+                            </div>
+                        </div>
+                        <br>
+                        <input type="submit" value="Submit" name="submit" class="btn btn-success btn-block">
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+<script src="js/script.js"></script>
+<script>
+    var checkbox_3 = document.querySelector('#checkbox_3');
+    document.querySelector('.select-field').addEventListener('click' , () =>{
+        document.querySelector('.input-selector').classList.toggle('hide');
+        document.querySelector('.task').classList.toggle('show');
+        document.querySelector('.taskone').classList.toggle('show');
+        document.querySelector('.task2').classList.toggle('show');
+        document.querySelector('.task3').classList.toggle('show');
+        // checkbox_3.style.display = ''
+        console.log('hello')
+        // alert("jkdfhsdufgd")
+    })
+
+</script>
+</html>

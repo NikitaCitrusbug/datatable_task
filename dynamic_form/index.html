@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Dynamic Form</title>
+</head>
+<body>
+    <br>
+    <div class="container">
+        <h1>Dynamic Form Creation</h1>
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <select class="form-control" name="inputType" id="inputType">
+                <option value="text">Text</option>
+                <option value="password">Password</option>
+                <option value="radio">Radio</option>
+                <option value="checkbox">CheckBox</option>
+                <option value="number">Number</option>
+                <option value="textarea">TextArea</option>
+                <option value="submit">Submit</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <input type="text" class="form-control" name="labelValue" id="labelValue" placeholder="Text Label.....">
+        </div>
+
+    </div>
+    <div class="mt-3 border rounded shadow" id="form">
+
+    </div>
+
+    </div>
+    
+    
+</body>
+<script src="js/script.js"></script>
+</html>
