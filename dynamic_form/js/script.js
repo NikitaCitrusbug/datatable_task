@@ -107,6 +107,9 @@ labelInputField.addEventListener('keyup', (e) =>{
         console.log(typec)
         const keyPress = e.key
         if(keyPress === "Enter"){
+
+
+            
             const type = inputType.value
             // console.log(type)
             const label = labelInputField.value
@@ -145,3 +148,5 @@ labelInputField.addEventListener('keyup', (e) =>{
     
 
 })
+
+

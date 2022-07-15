@@ -30,6 +30,13 @@
         <div class="col-md-3">
             <input type="color" class="form-control" name="colorValue" id="colorValue">
         </div>
+        <div class="col-md-3">
+            Enter a Value <input type="text" id="prod" autofocus=true />
+            <p><input type="button" id="bt" value="Create Checkbox" onclick="createChk(prod)" />
+            </p>
+            <p id="container"></p>
+            <!-- <input type="checkbox" name="checkValue" id="checkValue"> -->
+        </div>
 
     </div>
     <div class="mt-3 border rounded shadow" id="form">
@@ -41,4 +48,37 @@
     
 </body>
 <script src="js/script.js"></script>
+<script>
+    var i = 1;      // Just a counter.
+
+function createChk(obj) {
+    if (obj.value !== '') {
+      
+      // Create checkbox (its a input box of type checkbox).
+      var chk = document.createElement('input');  
+      
+      // Specify the type of element.
+      chk.setAttribute('type', 'checkbox');
+      chk.setAttribute('id', 'prodName' + i);  // Set an ID.
+      chk.setAttribute('value', obj.value);
+      chk.setAttribute('name', 'products');
+
+      // Create label for checkbox.
+      var lbl = document.createElement('label');  
+      lbl.setAttribute('for', 'prodName' + i);
+
+      // Create text node and append it to the label.
+      lbl.appendChild(document.createTextNode(obj.value));
+
+      // Append the newly created checkbox and label to the <p>.
+      container.appendChild(chk);
+      container.appendChild(lbl);
+
+      obj.value = '';
+      document.getElementById(obj.id).focus();
+
+      i = i + 1;
+    }
+}
+</script>
 </html>
