@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(246, 172, 240);
+}
+h1{
+    color: crimson;
+}
+#form{
+    color: darkmagenta;
+    /* margin-top: 20px; */
+}
+.mb-3{
+    margin-top: 10px;
+    /* color: red; */
+}

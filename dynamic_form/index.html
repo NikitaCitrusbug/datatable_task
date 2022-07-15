@@ -10,8 +10,8 @@
 <body>
     <br>
     <div class="container">
-        <h1>Dynamic Form Creation</h1>
-    <hr>
+        <h1 class="text-center">Dynamic Form Creation</h1>
+    
     <div class="row">
         <div class="col-md-6">
             <select class="form-control" name="inputType" id="inputType">
@@ -20,12 +20,15 @@
                 <option value="radio">Radio</option>
                 <option value="checkbox">CheckBox</option>
                 <option value="number">Number</option>
-                <option value="textarea">TextArea</option>
+                <!-- <option value="textarea">TextArea</option> -->
                 <option value="submit">Submit</option>
             </select>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-3">
             <input type="text" class="form-control" name="labelValue" id="labelValue" placeholder="Text Label.....">
+        </div>
+        <div class="col-md-3">
+            <input type="color" class="form-control" name="colorValue" id="colorValue">
         </div>
 
     </div>
