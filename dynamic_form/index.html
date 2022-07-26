@@ -17,8 +17,8 @@
             <select class="form-control" name="inputType" id="inputType">
                 <option value="text">Text</option>
                 <option value="password">Password</option>
-                <option value="radio">Radio</option>
-                <option value="checkbox">CheckBox</option>
+                <!-- <option value="radio" onclick="createRad(produ)">Radio</option> -->
+                <option value="checkbox" id="prod" onclick="createChk(prod)">CheckBox</option>
                 <option value="number">Number</option>
                 <!-- <option value="textarea">TextArea</option> -->
                 <option value="submit">Submit</option>
@@ -30,13 +30,14 @@
         <div class="col-md-3">
             <input type="color" class="form-control" name="colorValue" id="colorValue">
         </div>
-        <div class="col-md-3">
+        <!-- <div class="col-md-3">
             Enter a Value <input type="text" id="prod" autofocus=true />
             <p><input type="button" id="bt" value="Create Checkbox" onclick="createChk(prod)" />
             </p>
             <p id="container"></p>
-            <!-- <input type="checkbox" name="checkValue" id="checkValue"> -->
-        </div>
+            
+        </div> -->
+        
 
     </div>
     <div class="mt-3 border rounded shadow" id="form">
@@ -51,34 +52,45 @@
 <script>
     var i = 1;      // Just a counter.
 
-function createChk(obj) {
-    if (obj.value !== '') {
+// function createChk(obj) {
+//     console.log("helloooooo")
+//     if (obj.value !== '') {
       
-      // Create checkbox (its a input box of type checkbox).
-      var chk = document.createElement('input');  
+//       // Create checkbox (its a input box of type checkbox).
+//       var chk = document.createElement('input');  
       
-      // Specify the type of element.
-      chk.setAttribute('type', 'checkbox');
-      chk.setAttribute('id', 'prodName' + i);  // Set an ID.
-      chk.setAttribute('value', obj.value);
-      chk.setAttribute('name', 'products');
+//       // Specify the type of element.
+//       chk.setAttribute('type', 'checkbox');
+//       chk.setAttribute('id', 'prodName' + i);  // Set an ID.
+//       chk.setAttribute('value', obj.value);
+//       chk.setAttribute('name', 'products');
 
-      // Create label for checkbox.
-      var lbl = document.createElement('label');  
-      lbl.setAttribute('for', 'prodName' + i);
+//       // Create label for checkbox.
+//       var lbl = document.createElement('label');  
+//       lbl.setAttribute('for', 'prodName' + i);
 
-      // Create text node and append it to the label.
-      lbl.appendChild(document.createTextNode(obj.value));
+//       // Create text node and append it to the label.
+//       lbl.appendChild(document.createTextNode(obj.value));
 
-      // Append the newly created checkbox and label to the <p>.
-      container.appendChild(chk);
-      container.appendChild(lbl);
+//       // Append the newly created checkbox and label to the <p>.
+//       container.appendChild(chk);
+//       container.appendChild(lbl);
 
-      obj.value = '';
-      document.getElementById(obj.id).focus();
+//       obj.value = '';
+//       document.getElementById(obj.id).focus();
 
-      i = i + 1;
-    }
+//       i = i + 1;
+//     }
+// }
+
+var j = 1;  
+function createRad(object){
+    console.log("hellloooo radio button............")
+
 }
+    
+
+    
+
 </script>
 </html>

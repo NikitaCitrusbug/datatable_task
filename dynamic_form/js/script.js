@@ -104,7 +104,7 @@ labelInputField.addEventListener('keyup', (e) =>{
 
     document.getElementById('colorValue').addEventListener('dblclick' , function myFunction(){
         const typec = colorInputField.value
-        console.log(typec)
+        // console.log(typec)
         const keyPress = e.key
         if(keyPress === "Enter"){
 
@@ -117,7 +117,7 @@ labelInputField.addEventListener('keyup', (e) =>{
             const div = document.createElement("div")
             const input = document.createElement("input")
             labelInput.innerHTML = label;
-            console.log(input)
+            // console.log(input)
             input.style.color = typec;
             input.type = type;
             // input.classList.add('form-control');
@@ -135,6 +135,7 @@ labelInputField.addEventListener('keyup', (e) =>{
                 input.classList.add('btn')
                 input.classList.add('btn-success')
                 input.value = label
+                
     
             }
             
