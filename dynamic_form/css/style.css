@@ -1,11 +1,11 @@
 body{
-    background-color: rgb(157, 147, 156);
+    background-color: rgb(165, 188, 212);
 }
 h1{
-    color: crimson;
+    color: rgb(27, 20, 220);
 }
 #form{
-    color: darkmagenta;
+    color: rgb(17, 94, 105);
     /* margin-top: 20px; */
 }
 .mb-3{
